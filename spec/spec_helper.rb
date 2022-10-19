@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "roda/plugins/IPShield"
+require "roda/ipshield"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

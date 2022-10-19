@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in roda-plugins-IPShield.gemspec
+# Specify your gem's dependencies in roda-ipshield.gemspec
 gemspec
 
 gem "rake", "~> 13.0"
