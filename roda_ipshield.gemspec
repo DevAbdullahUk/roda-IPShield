@@ -3,7 +3,7 @@
 require_relative "lib/roda/ipshield/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "roda-ipshield"
+  spec.name = "roda_ipshield"
   spec.version = Roda::Ipshield::VERSION
   spec.authors = ["Abdullah Janjua"]
   spec.email = ["Abdullah.Janjua@dvla.gov.uk"]
