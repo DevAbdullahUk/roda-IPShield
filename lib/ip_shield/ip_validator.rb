@@ -1,13 +1,16 @@
 require "ipaddr"
 require "singleton"
 
-#
+# the +IPValidator+ is a simple singleton class to validate and manage IP addresses.
+# You can use this class to authorize a list of IP address.
 class IPValidator
   include Singleton
   attr_accessor :ips
 
+  # Invalid IP boundary error
   class InvalidIPsBoundary < StandardError; end
 
+  # Invalid IP address error
   class InvalidIP < StandardError; end
 
   INVALID_BOUNDARY = "IP boundary must be an array of 2 elements: high and low".freeze
@@ -68,17 +71,36 @@ class IPValidator
       high = IPAddr.new(range.last)
       current = IPAddr.new(ip_addr)
 
-      (low..high)===current
+      (low..high) === current
     end
 
     (ip_list.count + ip_range.count).positive?
   end
 
+  # Use this function to add new IPs to the authorized IP list.
+  # 
+  # @note
+  # This function will check if the IP is valid before adding the IP to the
+  # authorized IP list.
+  # 
+  # @example
+  #   IPValidator.instance.add_ip('0.0.0.0')
+  # 
+  # @param [String] ip_addr the IP address to be added
+  # @return [IPValidator] self
   def add_ip(ip_addr)
     check_ips([ip_addr]) && @ips.push(ip_addr)
     return_self
   end
 
+  # Use this function to remove the IP from the authorized IP list. The given IP
+  # must exist in the IP list
+  #
+  # @raise
+  #   InvalidIP: If the IP does not exist in the authorized IP list
+  #
+  # @param [String] ip_addr the IP address to be removed
+  # @return [IPValidator] self
   def remove_ip(ip_addr)
     raise InvalidIP, IP_DOES_NOT_EXIST if @ips.delete(ip_addr).nil?
     return_self
