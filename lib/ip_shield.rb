@@ -3,7 +3,7 @@
 require_relative "ip_shield/version"
 require_relative "ip_shield/ip_validator"
 require "ipaddr"
-
+require 'roda'
 class Roda
   module RodaPlugins
     module IpShield
