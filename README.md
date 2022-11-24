@@ -28,12 +28,14 @@ If bundler is not being used to manage dependencies, install the gem by executin
 | 👔 Usage and examples |
 | ----------------------------------------- |
 
-Add the plugin to your Roda Application. You can add one IP (ex. '0.0.0.0') or a range of IPs (ex. ['128.0.0.0', '128.0.0.5']). Moreover, you can add the IP address as part of the configurations or you can add them by calling `.authorise_ip`.
+Add the plugin to your Roda Application. You can add one IP (ex. `'0.0.0.0'`) or a range of IPs (ex. `['128.0.0.0', '128.0.0.5']`). Moreover, you can add the IP address as part of the configurations or you can add them by calling `.authorise_ip`.
+
 ```ruby
 plugin :ip_shield, '0.0.0.0', ['128.0.0.0', '128.0.0.5']
 ```
 
 Check if the request IP is authorised by calling `authorised_ip?` or `must_be_authorised_ip`. Please bear in mind that `authorised_ip?` will return a boolean value. `must_be_authorised_ip` in on the other hand will raise `UnauthorisedIP` error.
+
 ```ruby
 route do |r|
   r.authorised_ip? ? 'IP is authorised' : 'IP is not authorised'
