@@ -8,6 +8,9 @@
 
 Thank you for using `ip_shield` gem. This gem helps defending your Roda application agenst unwanted requests by only granding authorased IP addresses and access to the app, page or any resources.  
 
+[![Publish to RubyGem](https://github.com/DevAbdullahUk/roda-IPShield/actions/workflows/Publish%20RubyGems.yml/badge.svg?branch=main)](https://github.com/DevAbdullahUk/roda-IPShield/actions/workflows/Publish%20RubyGems.yml)
+[![Run Tests](https://github.com/DevAbdullahUk/roda-IPShield/actions/workflows/Run%20Tests.yml/badge.svg?branch=main)](https://github.com/DevAbdullahUk/roda-IPShield/actions/workflows/Run%20Tests.yml)
+
 
 | 🏁  Installation & Getting statrted |
 | ----------------------------------------- |
