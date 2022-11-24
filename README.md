@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="gem logo" src="/docs/lego.png">
+   <img src="/docs/lego.png" height="auto" width="500" style="border-radius:30%">
 </div>
 
 ## IP Shield
