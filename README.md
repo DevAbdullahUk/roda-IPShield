@@ -28,7 +28,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 | 👔 Usage and examples |
 | ----------------------------------------- |
 
-Add the plugin to your Roda Application
+Add the plugin to your Roda Application. You can add one IP (ex. '0.0.0.0') or a range of IPs (ex. ['128.0.0.0', '128.0.0.5']). Moreover, you can add the IP address as part of the configurations or you can add them by calling `.authorise_ip`.
 ```ruby
 plugin :ip_shield, '0.0.0.0', ['128.0.0.0', '128.0.0.5']
 ```
